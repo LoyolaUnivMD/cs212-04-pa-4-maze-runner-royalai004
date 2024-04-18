@@ -1,0 +1,34 @@
+Method: read_file
+Purpose: Reads in the maze from the file
+Parameters: Scanner in, ArrayList <ArrayList <String>> maze
+Return: maze
+Algorithm:
+1. Import BufferedReader and FileReader
+2. Ask user for the name of the file
+3. Declare String filename and set it to user input
+4. try:
+  a. Declare String line
+  b. while line is being read:
+    i. add line to maze
+5. return maze
+
+
+Class Queue:
+Method: void addQueue()
+*Enqueue
+
+Method: void takeQueue()
+*Dequeue
+
+Method: makeQueue
+1.Create an empty queue
+2.Put the location of the entrance on the queue
+3.While the queue is not empty
+  a.Take a spot off the queue
+  b. If the spot is the exit
+    i. The maze is solvable, note success
+  c.Otherwise,
+    ii. For each immediate (i.e., not diagonal) neighbor
+      a.If you have never visited the neighbor and the neighbor is not a wall
+        i.Add th neighbor to the queue
+4. you explored everything you could reach and did not find the exit, note failure
