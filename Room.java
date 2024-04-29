@@ -1,6 +1,6 @@
 public class Room {
     // Instance variables
-    private char symbol; // ., #, *, o
+    private char symbol; // Maze symbols: ., #, *, o
     private boolean visited;
 
     // Constructor
