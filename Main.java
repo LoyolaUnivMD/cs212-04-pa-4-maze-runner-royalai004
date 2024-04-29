@@ -17,7 +17,7 @@ public class Main {
 
             // Output the maze
             System.out.println("Maze:");
-            printMaze(maze);
+            outputMaze(maze);
 
             // Solve the maze
             boolean solvable = solveMaze(maze);
@@ -33,7 +33,7 @@ public class Main {
             System.out.println("An error occurred while reading the maze file: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("An unexpected error occurred: " + e.getMessage());
-        } 
+        }
     }
 
     // Method to read the maze from a file
@@ -57,8 +57,8 @@ public class Main {
         }
     }
 
-    // Method to print the maze
-    private static void printMaze(char[][] maze) {
+    // Method to output the maze
+    private static void outputMaze(char[][] maze) {
         // Output each cell in the maze
         for (char[] row : maze) {
             for (char cell : row) {
@@ -81,11 +81,11 @@ public class Main {
         // Declare array with directions: up, down, left, right
         int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-        return dfs(maze, start[0], start[1], directions);
+        return exploreMaze(maze, start[0], start[1], directions);
     }
 
-    // DFS method to solve the maze
-    private static boolean dfs(char[][] maze, int row, int col, int[][] directions) {
+    // Method to traverse the maze
+    private static boolean exploreMaze(char[][] maze, int row, int col, int[][] directions) {
         // Check if we reached the exit
         if (maze[row][col] == '*') {
             return true;
@@ -98,7 +98,7 @@ public class Main {
 
         // Display the maze with explored spaces
         System.out.println("Explored Maze:");
-        printMaze(maze);
+        outputMaze(maze);
 
         // Explore neighbors
         for (int[] dir : directions) {
@@ -108,7 +108,7 @@ public class Main {
             // Check to see if new position is valid, not a wall, or not explored
             if (isValidPosition(newRow, newCol, maze.length, maze[0].length) && maze[newRow][newCol] != '#' && maze[newRow][newCol] != 'x') {
                 // Recursive call to explore the neighbor
-                if (dfs(maze, newRow, newCol, directions)) {
+                if (exploreMaze(maze, newRow, newCol, directions)) {
                     return true;
                 }
             }
@@ -133,5 +133,5 @@ public class Main {
     // Helper method to check if a position is valid within the maze bounds
     private static boolean isValidPosition(int row, int col, int numRows, int numCols) {
         return row >= 0 && row < numRows && col >= 0 && col < numCols;
-    } //end of Method
-}//end of main Method
+    }
+}
