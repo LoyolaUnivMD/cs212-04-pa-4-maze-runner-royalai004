@@ -1,28 +1,28 @@
-public class Node {
-    // Declare instance variables
-    private Room data;
-    private Node next;
+public class Room {
+    // Instance variables
+    private char symbol; // ., #, *, o
+    private boolean visited;
 
     // Constructor
-    public Node(Room data) {
-        this.data = data;
-        this.next = null;
+    public Room(char symbol) {
+        this.symbol = symbol;
+        this.visited = false;
     }
 
     // Getters and setters
-    public Room getData() {
-        return data;
+    public char getSymbol() {
+        return symbol;
     }
 
-    public void setData(Room data) {
-        this.data = data;
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
     }
 
-    public Node getNext() {
-        return next;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setNext(Node next) {
-        this.next = next;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 }
