@@ -1,3 +1,13 @@
+/*
+Programmers: Royal
+Course:  CS212, Mr. John
+Due Date: 4/2/2024
+Assignment: PA 4
+Problem Statement: Create a program that determines if a given maze can be solved
+Data In: File name
+Data Out: Maze solution 
+Credits: geeksforgeeks.org, stackoverflow.com
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
