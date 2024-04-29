@@ -24,7 +24,7 @@ public class Queue {
             rear = newNode;
         }
     }
-    Method to remove node from queue
+    //Method to remove node from queue
     public Room dequeue() {
         if (isEmpty()) {
             return null;
